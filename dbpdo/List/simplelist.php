@@ -71,7 +71,10 @@ class SimpleList
     
     function delete($data)
     {
-        // TODO
+        $sql = ("DELETE FROM List (Item) value (:ID);");        
+        $sth = $this->dbh->prepare($sql);
+        $pdo_data = array(':ID' => $data['Item']);
+        $sth->execute($pdo_data);
     }    
 
 } 
