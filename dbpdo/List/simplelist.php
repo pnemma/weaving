@@ -71,7 +71,7 @@ class SimpleList
     
     function delete($data)
     {
-        $sql = ("DELETE FROM List (Item) value (:ID);");        
+        $sql = ("DELETE FROM List WHERE ID = :ID;");        
         $sth = $this->dbh->prepare($sql);
         $pdo_data = array(':ID' => $data['Item']);
         $sth->execute($pdo_data);
