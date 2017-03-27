@@ -73,7 +73,7 @@ class SimpleList
     {
         $sql = ("DELETE FROM List WHERE ID = :ID;");        
         $sth = $this->dbh->prepare($sql);
-        $pdo_data = array(':ID' => $data['Item']);
+        $pdo_data = array(':ID' => $data['ID']);
         $sth->execute($pdo_data);
     }    
 
